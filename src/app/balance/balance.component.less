@@ -3,4 +3,32 @@
   background-color: #EC755D;
   border-radius: 20px;
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & > .balance {
+    margin-left: 24px;
+  }
+
+  & > .logo {
+    margin-right: 24px;
+    width: 72px;
+    display: block;
+
+    & > .circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+
+      &.white {
+        box-sizing: border-box;
+        border: solid 2px white;
+      }
+
+      &.black {
+        background-color: #382314;
+      }
+    }
+  }
 }

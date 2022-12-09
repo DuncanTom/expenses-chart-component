@@ -14,20 +14,27 @@
   & > .logo {
     margin-right: 24px;
     width: 72px;
-    display: block;
+    height: 48px;
+    position: relative;
 
     & > .circle {
-      width: 48px;
-      height: 48px;
+      height: 100%;
+      aspect-ratio: 1;
       border-radius: 50%;
 
       &.white {
         box-sizing: border-box;
         border: solid 2px white;
+        position: relative;
+        z-index: 1;
       }
 
       &.black {
         background-color: #382314;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 0;
       }
     }
   }

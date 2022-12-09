@@ -3,19 +3,32 @@
   background-color: #EC755D;
   border-radius: 20px;
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
+  color: white;
 
-  & > .balance {
-    margin-left: 24px;
+  & > #balanceTitle {
+    position: absolute;
+    left: 32px;
+    top: 27px;
+    margin: 0;
+    padding: 0;
+  }
+
+  & > #balanceValue {
+    position: absolute;
+    left: 32px;
+    top: 58px;
+    margin: 0;
+    padding: 0;
+    color: #FFFBF6;
   }
 
   & > .logo {
-    margin-right: 24px;
     width: 72px;
     height: 48px;
-    position: relative;
+    position: absolute;
+    left: 429px;
+    top: 39px;
 
     & > .circle {
       height: 100%;

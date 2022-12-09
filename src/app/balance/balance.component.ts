@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./balance.component.less']
 })
 export class BalanceComponent {
-
+  myBalance: number = 924.48;
 }

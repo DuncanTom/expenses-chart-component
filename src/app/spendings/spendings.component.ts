@@ -13,4 +13,11 @@ interface Spendings {
 })
 export class SpendingsComponent {
   spendings: Array<Spendings> = spendingsData;
+
+  isCurrentDay(inDayStr: string): boolean {
+    const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+    const now = new Date();
+    const nowName = days[now.getDay()];
+    return (nowName === inDayStr);
+  }
 }

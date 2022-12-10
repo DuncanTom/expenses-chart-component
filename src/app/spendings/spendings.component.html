@@ -1,3 +1,24 @@
 <section class="container">
 
+  <h2 class="heading-L">Spending - Last 7 days</h2>
+
+  <div id="spendings_chart">
+    <div class="daily-spending" *ngFor="let spending of spendings">
+      <div class="spending-bar" [ngClass]="{'current-day' : isCurrentDay(spending.day)}"></div>
+      <span class="mini-caption">{{spending.day}}</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div id="month_total">
+    <h5 class="body">Total this month</h5>
+    <strong class="heading-XL">{{000 | currency:'USD'}}</strong>
+ </div>
+
+  <div id="month_variation">
+    <strong class="body-bold">+0.0%</strong>
+    <h5 class="body">From last month</h5>
+  </div>
+
 </section>

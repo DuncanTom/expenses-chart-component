@@ -17,7 +17,7 @@ export class SpendingsComponent {
   getSpendingBarHeight(inSpendingVal: number) : string {
     const maxSpending = Math.max(...this.spendings.map(o => o.amount));
     const curSpendingFactor = inSpendingVal / maxSpending;
-    return `calc(100%*${curSpendingFactor})`;
+    return `calc(150px*${curSpendingFactor})`;
   }
 
   isCurrentDay(inDayStr: string) : boolean {

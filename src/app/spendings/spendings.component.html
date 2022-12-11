@@ -4,12 +4,18 @@
 
   <div id="spendings_chart">
     <div class="daily-spending" *ngFor="let spending of spendings">
-      <div class="spending-bar-container">
-        <div class="spending-bar"
-             [ngClass]="{'current-day' : isCurrentDay(spending.day)}"
-             [ngStyle]="{'height': getSpendingBarHeight(spending.amount)}"></div>
-      </div>
+
       <span class="mini-caption">{{spending.day}}</span>
+
+      <div class="spending-bar"
+           [ngClass]="{'current-day' : isCurrentDay(spending.day)}"
+           [ngStyle]="{'height': getSpendingBarHeight(spending.amount)}">
+      </div>
+
+      <div class="spending-value body-bold">
+        {{12.34 | currency:'USD'}}
+      </div>
+
     </div>
   </div>
 

@@ -1,11 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
-@import './expenses-chart.component.desktop.less';
-@import './expenses-chart.component.mobile.less';
+
+@container-width: 540px;
+@container-height: 660px;
+@font-size-heading-xl: 48px;
+@font-size-heading-l: 32px;
+@font-size-body-bold: 18px;
+@font-size-body: 18px;
+@font-size-mini-caption: 15px;
+
+@media screen and (min-width: 343px) and (max-width: 539px) {
+  @container-width: 343px;
+  @container-height: 534px;
+  @font-size-heading-xl: 30px;
+  @font-size-heading-l: 24px;
+  @font-size-body-bold: 15px;
+  @font-size-body: 15px;
+  @font-size-mini-caption: 12px;
+}
 
 .container {
+  width: @container-width;
+  height: @container-height;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: space-between;
   font-family: 'DM Sans', sans-serif;
+}
+
+:host ::ng-deep {
+  .heading-XL {
+    font-size: @font-size-heading-xl;
+    font-weight: 700;
+  }
+
+  .heading-L {
+    font-size: @font-size-heading-l;
+    font-weight: 700;
+  }
+
+  .body-bold {
+    font-style: normal;
+    font-weight: 700;
+    font-size: @font-size-body-bold;
+    line-height: 23px;
+    text-align: right;
+  }
+
+  .body {
+    font-size: @font-size-body;
+    font-weight: 400;
+  }
+
+  .mini-caption {
+    font-size: @font-size-mini-caption;
+    font-weight: 400;
+    color: #92857A;
+  }
 }

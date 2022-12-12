@@ -14,7 +14,7 @@
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 32px;
-    height: 125px;
+    height: 511px;
     border-radius: 20px;
   }
 
@@ -54,32 +54,32 @@
         border-radius: 5px;
         width: 33px;
 
-        @media @desktop {
-          width: 50.36px;
-        }
-
-        &:hover {
-          background-color: #FF9B86;
-          cursor: pointer;
-        }
-
         &.current-day {
           background-color: #76B5BC;
-
-          &:hover {
-            background-color: #B4E0E5;
-          }
         }
 
-        &:hover + .spending-value {
-          width: 75px;
-          height: 40px;
-          border-radius: 5px;
-          background-color: #382314;
-          color: #FFFBF6;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        @media @desktop {
+          width: 50.36px;
+
+          &:hover {
+            background-color: #FF9B86;
+            cursor: pointer;
+
+            &.current-day {
+              background-color: #B4E0E5;
+            }
+          }
+
+          &:hover + .spending-value {
+            width: 75px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: #382314;
+            color: #FFFBF6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
 

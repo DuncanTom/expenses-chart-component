@@ -1,26 +1,44 @@
-.container {
-  height: 511px;
-  background-color: #FFFBF6;
-  border-radius: 20px;
-  flex: 1;
+@desktop: ~"only screen and (min-width: 540px)";
 
+.container {
+
+  background-color: #FFFBF6;
   box-sizing: border-box;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 24px;
+  height: 421px;
+  border-radius: 10px;
+
+  @media @desktop {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 32px;
+    height: 125px;
+    border-radius: 20px;
+  }
 
   & > h2 {
     margin: 0;
     padding: 0;
-    margin-bottom: 18px;
+    margin-bottom: 52px;
+
+    @media @desktop {
+      margin-bottom: 66px;
+    }
   }
 
   & > #spendings_chart {
-    height: 226px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 32px;
+    height: 177px;
+    margin-bottom: 24px;
+
+    @media @desktop {
+      height: 178px;
+      margin-bottom: 32px;
+    }
 
     & > .daily-spending {
       display: flex;
@@ -32,9 +50,13 @@
       gap: 8px;
 
       & > .spending-bar {
-        width: 50.36px;
         background-color: #EC755D;
         border-radius: 5px;
+        width: 33px;
+
+        @media @desktop {
+          width: 50.36px;
+        }
 
         &:hover {
           background-color: #FF9B86;
@@ -71,7 +93,11 @@
     height: 2px;
     background-color: #F8E9DD;
     border: none;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
+
+    @media @desktop {
+      margin-bottom: 32px;
+    }
   }
 
   & > #month_info {

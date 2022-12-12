@@ -1,34 +1,57 @@
+@desktop: ~"only screen and (min-width: 540px)";
+
 .container {
-  height: 125px;
+
   background-color: #EC755D;
-  border-radius: 20px;
-  flex: 1;
   position: relative;
   color: white;
+  height: 97px;
+  border-radius: 10px;
+  padding-left: 20px;
+
+  @media @desktop {
+    height: 125px;
+    border-radius: 20px;
+    padding-left: 32px;
+  }
 
   & > #balanceTitle {
     position: absolute;
-    left: 32px;
-    top: 27px;
     margin: 0;
     padding: 0;
+    top: 20px;
+
+    @media @desktop {
+      top: 27px;
+    }
   }
 
   & > #balanceValue {
     position: absolute;
-    left: 32px;
-    top: 58px;
     margin: 0;
     padding: 0;
     color: #FFFBF6;
+    top: 44px;
+
+    @media @desktop {
+      top: 58px;
+    }
   }
 
   & > .logo {
-    width: 72px;
-    height: 48px;
     position: absolute;
-    left: 429px;
-    top: 39px;
+    right: 0;
+    height: 40px;
+    width: 60px;
+    top: 28px;
+    right: 24px;
+
+    @media @desktop {
+      top: 39px;
+      right: 39px;
+      height: 48px;
+      width: 72px;
+    }
 
     & > .circle {
       height: 100%;

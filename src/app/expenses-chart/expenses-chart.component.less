@@ -1,26 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
-@container-width: 540px;
-@container-height: 660px;
-@font-size-heading-xl: 48px;
-@font-size-heading-l: 32px;
-@font-size-body-bold: 18px;
-@font-size-body: 18px;
-@font-size-mini-caption: 15px;
-
-@media screen and (min-width: 343px) and (max-width: 539px) {
-  @container-width: 343px;
-  @container-height: 534px;
-  @font-size-heading-xl: 30px;
-  @font-size-heading-l: 24px;
-  @font-size-body-bold: 15px;
-  @font-size-body: 15px;
-  @font-size-mini-caption: 12px;
-}
+@desktop: ~"only screen and (min-width: 540px)";
 
 .container {
-  width: @container-width;
-  height: @container-height;
+  width: 343px;
+  height: 534px;
+
+  @media @desktop {
+    width: 540px;
+    height: 660px;
+  }
+
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -30,31 +20,54 @@
 
 :host ::ng-deep {
   .heading-XL {
-    font-size: @font-size-heading-xl;
+    font-size: 30px;
     font-weight: 700;
+
+    @media @desktop {
+      font-size: 48px;
+    }
   }
 
   .heading-L {
-    font-size: @font-size-heading-l;
+    font-size: 24px;
     font-weight: 700;
+
+    @media @desktop {
+      font-size: 32px;
+    }
   }
 
   .body-bold {
     font-style: normal;
     font-weight: 700;
-    font-size: @font-size-body-bold;
-    line-height: 23px;
+    font-size: 15px;
+    line-height: 20px;
     text-align: right;
+
+    @media @desktop {
+      font-size: 18px;
+      line-height: 23px;
+    }
   }
 
   .body {
-    font-size: @font-size-body;
+    font-size: 15px;
+    line-height: 20px;
     font-weight: 400;
+
+    @media @desktop {
+      font-size: 18px;
+      line-height: 23px;
+    }
   }
 
   .mini-caption {
-    font-size: @font-size-mini-caption;
+    font-size: 12px;
     font-weight: 400;
     color: #92857A;
+
+    @media @desktop {
+      font-size: 15px;
+    }
   }
 }

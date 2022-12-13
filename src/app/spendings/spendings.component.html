@@ -3,19 +3,21 @@
   <h2 class="heading-L">Spending - Last 7 days</h2>
 
   <div id="spendings_chart">
-    <div class="daily-spending" *ngFor="let spending of spendings">
+    <div *ngFor="let spending of spendings">
 
-      <span class="mini-caption">{{spending.day}}</span>
+      <div class="daily-spending">
+        <div class="spending-bar"
+            [ngClass]="{'current-day' : isCurrentDay(spending.day)}"
+            [ngStyle]="{'height': getSpendingBarHeight(spending.amount)}">
+            <div class="spending-value body-bold"
+                 [ngStyle]="{'bottom': getSpendingBarHeight(spending.amount)}">
+                   {{12.34 | currency:'USD'}}
+            </div>
+        </div>
 
-      <div class="spending-bar"
-           [ngClass]="{'current-day' : isCurrentDay(spending.day)}"
-           [ngStyle]="{'height': getSpendingBarHeight(spending.amount)}">
+        <span class="mini-caption">{{spending.day}}</span>
       </div>
-<!--
-      <div class="spending-value body-bold">
-        {{12.34 | currency:'USD'}}
-      </div>
--->
+
     </div>
   </div>
 

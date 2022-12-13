@@ -14,10 +14,18 @@ interface Spendings {
 export class SpendingsComponent {
   spendings: Array<Spendings> = spendingsData;
 
-  getSpendingBarHeight(inSpendingVal: number) : string {
+  getSpendingFactor(inSpendingVal: number) : number {
     const maxSpending = Math.max(...this.spendings.map(o => o.amount));
-    const curSpendingFactor = inSpendingVal / maxSpending;
-    return `calc(150px*${curSpendingFactor})`;
+    return inSpendingVal / maxSpending;
+  }
+  getSpendingBarHeight(inSpendingVal: number) : string {
+    const spendingFactor = this.getSpendingFactor(inSpendingVal);
+    return `calc(150px*${spendingFactor})`;
+  }
+
+  getSpendingValPos(inSpendingVal: number) : string {
+    const spendingFactor = this.getSpendingFactor(inSpendingVal);
+    return `calc(92px + 150px*(1 - ${spendingFactor}))`;
   }
 
   isCurrentDay(inDayStr: string) : boolean {
